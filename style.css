@@ -20,10 +20,6 @@
   animation: spark-pulse 3.5s ease-in-out infinite;
 }
 
-#ignition-flash {
-  opacity: 0;
-}
-
 @keyframes spark-pulse {
   0%, 100% { filter: brightness(1); }
   50% { filter: brightness(1.35); }
