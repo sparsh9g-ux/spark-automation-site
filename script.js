@@ -1,0 +1,72 @@
+// ─── Hero entrance ───
+gsap.timeline({ defaults: { ease: 'power3.out' } })
+  .to('#hero-eyebrow', { opacity: 1, y: 0, duration: 0.6 }, 0.1)
+  .from('#hero-eyebrow', { y: 12 }, 0.1)
+  .to('#hero-headline', { opacity: 1, duration: 0.8 }, 0.25)
+  .from('#hero-headline', { y: 24 }, 0.25)
+  .to('#hero-sub', { opacity: 1, duration: 0.7 }, 0.45)
+  .from('#hero-sub', { y: 16 }, 0.45)
+  .to('#hero-cta-group', { opacity: 1, duration: 0.7 }, 0.6)
+  .from('#hero-cta-group', { y: 16 }, 0.6);
+
+// ─── Service cards scroll reveal ───
+gsap.registerPlugin(ScrollTrigger);
+gsap.utils.toArray('.service-card').forEach((card, i) => {
+  gsap.to(card, {
+    opacity: 1,
+    y: 0,
+    duration: 0.7,
+    delay: (i % 2) * 0.1,
+    ease: 'power2.out',
+    scrollTrigger: {
+      trigger: card,
+      start: 'top 88%',
+      toggleActions: 'play none none none',
+    },
+  });
+});
+
+// ─── ROI Calculator ───
+const clientValueInput = document.getElementById('clientValue');
+const missedCallsInput = document.getElementById('missedCalls');
+const closeRateInput = document.getElementById('closeRate');
+
+const clientValueDisplay = document.getElementById('clientValueDisplay');
+const missedCallsDisplay = document.getElementById('missedCallsDisplay');
+const closeRateDisplay = document.getElementById('closeRateDisplay');
+
+const resultLeftOnTable = document.getElementById('resultLeftOnTable');
+const resultCharge = document.getElementById('resultCharge');
+const resultROI = document.getElementById('resultROI');
+
+const MONTHLY_CHARGE = 150; // flat package price
+const WEEKS_PER_MONTH = 4.33;
+
+function formatDollars(n) {
+  return '$' + Math.round(n).toLocaleString('en-US');
+}
+
+function calculate() {
+  const clientValue = Number(clientValueInput.value);
+  const missedCallsPerWeek = Number(missedCallsInput.value);
+  const closeRate = Number(closeRateInput.value) / 100;
+
+  clientValueDisplay.textContent = formatDollars(clientValue);
+  missedCallsDisplay.textContent = missedCallsPerWeek;
+  closeRateDisplay.textContent = closeRateInput.value + '%';
+
+  const monthlyMissedCalls = missedCallsPerWeek * WEEKS_PER_MONTH;
+  const lostCustomersPerMonth = monthlyMissedCalls * closeRate;
+  const monthlyDollarsLeftOnTable = lostCustomersPerMonth * clientValue;
+  const roiPercent = ((monthlyDollarsLeftOnTable - MONTHLY_CHARGE) / MONTHLY_CHARGE) * 100;
+
+  resultLeftOnTable.textContent = formatDollars(monthlyDollarsLeftOnTable);
+  resultCharge.innerHTML = formatDollars(MONTHLY_CHARGE) + '<span class="text-sm text-gray-500 font-normal">/mo</span>';
+  resultROI.textContent = Math.max(0, Math.round(roiPercent)).toLocaleString('en-US') + '%';
+}
+
+[clientValueInput, missedCallsInput, closeRateInput].forEach((input) => {
+  input.addEventListener('input', calculate);
+});
+
+calculate();

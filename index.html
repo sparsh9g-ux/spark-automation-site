@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spark Automation — AI Automation for Local Service Businesses</title>
+  <meta name="description" content="Spark Automation builds AI-powered missed-call, follow-up, and reactivation systems for local service businesses. See how much revenue you're losing to missed calls." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-[#07080a] text-white overflow-x-hidden">
+
+  <!-- ░░░ NAV ░░░ -->
+  <nav class="fixed top-0 left-0 right-0 z-50 px-6 md:px-10 py-5 flex items-center justify-between backdrop-blur-md bg-black/30 border-b border-white/5">
+    <div class="flex items-center gap-2.5">
+      <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-amber-400 to-orange-600 flex items-center justify-center font-display font-bold text-black text-sm">S</div>
+      <span class="font-display font-bold text-lg tracking-tight">Spark Automation</span>
+    </div>
+    <a href="#calculator" class="hidden sm:inline-flex items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 text-sm font-medium px-4 py-2 rounded-full transition-colors">
+      Calculate Your ROI
+    </a>
+  </nav>
+
+  <!-- ░░░ HERO ░░░ -->
+  <section id="hero" class="relative min-h-screen flex flex-col items-center justify-center text-center px-6 pt-24">
+    <div id="hero-glow" class="absolute inset-0 z-0 pointer-events-none"></div>
+    <div class="relative z-10 max-w-4xl">
+      <p id="hero-eyebrow" class="text-xs uppercase tracking-[0.2em] text-amber-400 mb-5 font-medium opacity-0">AI Automation for Local Service Businesses</p>
+      <h1 id="hero-headline" class="font-display text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.95] mb-7 opacity-0 tracking-tight">
+        Every missed call<br /><span class="text-gradient">is money on the table.</span>
+      </h1>
+      <p id="hero-sub" class="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto opacity-0 leading-relaxed">
+        We build the automations that text your customers back before they call your competitor — missed calls, instant lead response, review requests, reactivation. Live in days, not months.
+      </p>
+      <div id="hero-cta-group" class="opacity-0 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#calculator" class="inline-flex items-center gap-2 bg-amber-400 hover:bg-amber-300 text-black font-semibold text-base px-7 py-3.5 rounded-full transition-all duration-300 hover:scale-105">
+          See What You're Losing
+        </a>
+        <a href="#case-study" class="inline-flex items-center gap-2 text-gray-300 hover:text-white font-medium text-base px-7 py-3.5 rounded-full border border-white/15 hover:border-white/30 transition-all duration-300">
+          See a Real Build
+        </a>
+      </div>
+    </div>
+
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
+      <span class="text-xs uppercase tracking-widest text-gray-500">Scroll</span>
+      <div class="w-px h-8 bg-gradient-to-b from-gray-500 to-transparent"></div>
+    </div>
+  </section>
+
+  <!-- ░░░ SERVICES ░░░ -->
+  <section id="services" class="py-28 px-6 max-w-6xl mx-auto">
+    <p class="text-xs uppercase tracking-[0.2em] text-amber-400 text-center mb-4 font-medium">What We Build</p>
+    <h2 class="font-display text-4xl md:text-5xl font-bold text-center mb-16 tracking-tight">Four automations, one system</h2>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="service-card opacity-0 translate-y-6 bg-white/[0.03] border border-white/10 rounded-2xl p-8 hover:border-amber-400/40 transition-all duration-500">
+        <div class="text-3xl mb-5">📞</div>
+        <h3 class="font-display text-xl font-bold mb-2.5">Missed Call Text-Back</h3>
+        <p class="text-gray-400 leading-relaxed text-[15px]">A call goes unanswered, your customer gets a text within 30 seconds — before they hang up and call the next business on Google.</p>
+      </div>
+      <div class="service-card opacity-0 translate-y-6 bg-white/[0.03] border border-white/10 rounded-2xl p-8 hover:border-amber-400/40 transition-all duration-500">
+        <div class="text-3xl mb-5">⚡</div>
+        <h3 class="font-display text-xl font-bold mb-2.5">Instant Lead Response</h3>
+        <p class="text-gray-400 leading-relaxed text-[15px]">A form gets submitted on your site, they hear back immediately — not tomorrow morning when the lead's gone cold.</p>
+      </div>
+      <div class="service-card opacity-0 translate-y-6 bg-white/[0.03] border border-white/10 rounded-2xl p-8 hover:border-amber-400/40 transition-all duration-500">
+        <div class="text-3xl mb-5">⭐</div>
+        <h3 class="font-display text-xl font-bold mb-2.5">Review Requests</h3>
+        <p class="text-gray-400 leading-relaxed text-[15px]">Job's done, a review link goes out on autopilot a week later — building the reputation that gets you the next customer for free.</p>
+      </div>
+      <div class="service-card opacity-0 translate-y-6 bg-white/[0.03] border border-white/10 rounded-2xl p-8 hover:border-amber-400/40 transition-all duration-500">
+        <div class="text-3xl mb-5">🔄</div>
+        <h3 class="font-display text-xl font-bold mb-2.5">Reactivation</h3>
+        <p class="text-gray-400 leading-relaxed text-[15px]">Past customers gone quiet for 30-60 days get a re-engagement text — turning your old client list into new revenue.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░░ ROI CALCULATOR ░░░ -->
+  <section id="calculator" class="py-28 px-6 bg-white/[0.02] border-y border-white/5">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-xs uppercase tracking-[0.2em] text-amber-400 text-center mb-4 font-medium">The Math</p>
+      <h2 class="font-display text-4xl md:text-5xl font-bold text-center mb-4 tracking-tight">What are missed calls actually costing you?</h2>
+      <p class="text-gray-400 text-center mb-16 max-w-xl mx-auto">Three numbers. That's all it takes to see the real dollar amount walking away every month.</p>
+
+      <div class="grid md:grid-cols-2 gap-10 items-start">
+        <!-- Inputs -->
+        <div class="space-y-7">
+          <div>
+            <label class="flex items-center justify-between text-sm font-medium text-gray-300 mb-2.5">
+              <span>Average Client Value</span>
+              <span id="clientValueDisplay" class="text-amber-400 font-display font-bold">$400</span>
+            </label>
+            <input type="range" id="clientValue" min="50" max="5000" step="10" value="400" class="calc-slider" />
+            <p class="text-xs text-gray-500 mt-1.5">How much revenue does one closed customer bring in?</p>
+          </div>
+
+          <div>
+            <label class="flex items-center justify-between text-sm font-medium text-gray-300 mb-2.5">
+              <span>Missed Calls per Week</span>
+              <span id="missedCallsDisplay" class="text-amber-400 font-display font-bold">10</span>
+            </label>
+            <input type="range" id="missedCalls" min="1" max="100" step="1" value="10" class="calc-slider" />
+            <p class="text-xs text-gray-500 mt-1.5">Calls that ring out, go to voicemail, or aren't picked up.</p>
+          </div>
+
+          <div>
+            <label class="flex items-center justify-between text-sm font-medium text-gray-300 mb-2.5">
+              <span>Average Close Rate</span>
+              <span id="closeRateDisplay" class="text-amber-400 font-display font-bold">25%</span>
+            </label>
+            <input type="range" id="closeRate" min="1" max="100" step="1" value="25" class="calc-slider" />
+            <p class="text-xs text-gray-500 mt-1.5">Of the people who reach you, what share become paying customers?</p>
+          </div>
+        </div>
+
+        <!-- Results -->
+        <div class="bg-gradient-to-b from-white/[0.06] to-white/[0.02] border border-white/10 rounded-3xl p-8 md:p-10">
+          <div class="mb-7">
+            <p class="text-xs uppercase tracking-widest text-gray-400 mb-2">Monthly Dollars Left on the Table</p>
+            <p id="resultLeftOnTable" class="font-display text-5xl font-bold text-gradient tabular-nums">$0</p>
+          </div>
+          <div class="grid grid-cols-2 gap-6 pt-6 border-t border-white/10">
+            <div>
+              <p class="text-xs uppercase tracking-widest text-gray-400 mb-2">What We Charge</p>
+              <p id="resultCharge" class="font-display text-2xl font-bold tabular-nums">$150<span class="text-sm text-gray-500 font-normal">/mo</span></p>
+            </div>
+            <div>
+              <p class="text-xs uppercase tracking-widest text-gray-400 mb-2">Return on Spend</p>
+              <p id="resultROI" class="font-display text-2xl font-bold text-amber-400 tabular-nums">0%</p>
+            </div>
+          </div>
+          <a href="#contact" class="mt-8 w-full inline-flex items-center justify-center gap-2 bg-amber-400 hover:bg-amber-300 text-black font-semibold text-sm px-6 py-3.5 rounded-full transition-all duration-300">
+            Let's Get This Built
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░░ CASE STUDY ░░░ -->
+  <section id="case-study" class="py-28 px-6 max-w-5xl mx-auto">
+    <p class="text-xs uppercase tracking-[0.2em] text-amber-400 text-center mb-4 font-medium">Proof, Not Promises</p>
+    <h2 class="font-display text-4xl md:text-5xl font-bold text-center mb-16 tracking-tight">A real build, not a mockup</h2>
+
+    <div class="bg-white/[0.03] border border-white/10 rounded-3xl p-8 md:p-12">
+      <div class="flex flex-wrap items-center gap-3 mb-6">
+        <span class="text-xs font-medium bg-amber-400/10 text-amber-400 px-3 py-1.5 rounded-full">Pressure Washing</span>
+        <span class="text-xs font-medium bg-white/5 text-gray-400 px-3 py-1.5 rounded-full">Missed Call Text-Back</span>
+        <span class="text-xs font-medium bg-white/5 text-gray-400 px-3 py-1.5 rounded-full">Live &amp; Verified</span>
+      </div>
+      <h3 class="font-display text-2xl md:text-3xl font-bold mb-5">24-node automation, tested end-to-end against a real phone number</h3>
+      <p class="text-gray-400 leading-relaxed mb-6 max-w-3xl">
+        A missed call triggers a webhook, waits 30 seconds for a real callback window, dedupes repeat callers, looks up or creates the contact, sends the right message to a new lead vs. a returning customer, and logs the outcome into the pipeline — automatically, every time.
+      </p>
+      <div class="grid sm:grid-cols-3 gap-6 pt-6 border-t border-white/10">
+        <div>
+          <p class="font-display text-3xl font-bold text-amber-400">24</p>
+          <p class="text-xs text-gray-500 mt-1">workflow nodes</p>
+        </div>
+        <div>
+          <p class="font-display text-3xl font-bold text-amber-400">30s</p>
+          <p class="text-xs text-gray-500 mt-1">response window</p>
+        </div>
+        <div>
+          <p class="font-display text-3xl font-bold text-amber-400">100%</p>
+          <p class="text-xs text-gray-500 mt-1">live-call success rate</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░░ CONTACT / CTA ░░░ -->
+  <section id="contact" class="py-28 px-6 text-center">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="font-display text-4xl md:text-5xl font-bold mb-6 tracking-tight">Stop losing customers to voicemail.</h2>
+      <p class="text-gray-400 mb-10 text-lg">Tell us about your business — we'll show you exactly what a system like this looks like for you.</p>
+      <a href="sms:+16506135634" class="inline-flex items-center gap-3 bg-amber-400 hover:bg-amber-300 text-black font-semibold text-lg px-8 py-4 rounded-full transition-all duration-300 hover:scale-105">
+        Text (650) 613-5634
+      </a>
+    </div>
+  </section>
+
+  <footer class="py-10 px-6 text-center border-t border-white/5">
+    <p class="text-sm text-gray-600">© 2026 Spark Automation. Built with Claude.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
