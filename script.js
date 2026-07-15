@@ -13,7 +13,12 @@ if (!reduceMotion) {
     // hero text snaps in right as the flicker settles
     .from('#hero-eyebrow', { opacity: 0, y: 10, duration: 0.35, ease: 'power4.out' }, '-=0.15')
     .from('#hero-headline', { opacity: 0, y: 18, scale: 0.97, duration: 0.45, ease: 'back.out(1.6)' }, '-=0.1')
-    .from('#hero-sub', { opacity: 0, y: 12, duration: 0.4, ease: 'power4.out' }, '-=0.2')
+    // "kills a spark" catches the same flicker as the logo bolt
+    .to('#spark-word', { filter: 'brightness(2.2)', duration: 0.07, ease: 'power2.out' }, '-=0.05')
+    .to('#spark-word', { filter: 'brightness(0.7)', duration: 0.05 })
+    .to('#spark-word', { filter: 'brightness(1.8)', duration: 0.06 })
+    .to('#spark-word', { filter: 'brightness(1)', duration: 0.2, ease: 'power2.out' })
+    .from('#hero-sub', { opacity: 0, y: 12, duration: 0.4, ease: 'power4.out' }, '-=0.35')
     .from('#hero-cta-group', { opacity: 0, y: 12, duration: 0.4, ease: 'power4.out' }, '-=0.2');
 }
 
