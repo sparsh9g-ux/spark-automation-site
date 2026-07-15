@@ -16,29 +16,42 @@
 <body class="bg-[#07080a] text-white overflow-x-hidden">
 
   <!-- ░░░ NAV ░░░ -->
-  <nav class="fixed top-0 left-0 right-0 z-50 px-6 md:px-10 py-5 flex items-center justify-between backdrop-blur-md bg-black/30 border-b border-white/5">
+  <nav class="fixed top-0 left-0 right-0 z-50 px-6 md:px-10 py-4 flex items-center justify-between backdrop-blur-md bg-black/40 border-b border-white/5">
     <div class="flex items-center gap-2.5">
-      <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-amber-400 to-orange-600 flex items-center justify-center font-display font-bold text-black text-sm">S</div>
+      <div id="logo-bolt" class="w-8 h-8 rounded-lg bg-gradient-to-br from-yellow-300 to-cyan-400 flex items-center justify-center text-black text-base leading-none">⚡</div>
       <span class="font-display font-bold text-lg tracking-tight">Spark Automation</span>
     </div>
-    <a href="#calculator" class="hidden sm:inline-flex items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 text-sm font-medium px-4 py-2 rounded-full transition-colors">
-      Calculate Your ROI
-    </a>
+    <div class="flex items-center gap-3 md:gap-5">
+      <div class="hidden md:flex flex-col items-end text-right leading-tight">
+        <span class="text-[10px] uppercase tracking-widest text-gray-500">Reach the CEO</span>
+        <div class="flex items-center gap-2 text-sm font-medium">
+          <a href="tel:+16508850559" class="hover:text-yellow-300 transition-colors">(650) 885-0559</a>
+          <span class="text-gray-600">·</span>
+          <a href="mailto:sparsh9g@gmail.com" class="hover:text-yellow-300 transition-colors">sparsh9g@gmail.com</a>
+        </div>
+      </div>
+      <a href="#calculator" class="hidden sm:inline-flex items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 text-sm font-medium px-4 py-2 rounded-full transition-colors">
+        Calculate ROI
+      </a>
+    </div>
   </nav>
+
+  <!-- ░░░ IGNITION FLASH ░░░ -->
+  <div id="ignition-flash" class="fixed inset-0 z-[100] bg-white pointer-events-none"></div>
 
   <!-- ░░░ HERO ░░░ -->
   <section id="hero" class="relative min-h-screen flex flex-col items-center justify-center text-center px-6 pt-24">
     <div id="hero-glow" class="absolute inset-0 z-0 pointer-events-none"></div>
     <div class="relative z-10 max-w-4xl">
-      <p id="hero-eyebrow" class="text-xs uppercase tracking-[0.2em] text-amber-400 mb-5 font-medium">AI Automation for Local Service Businesses</p>
+      <p id="hero-eyebrow" class="text-xs uppercase tracking-[0.2em] text-yellow-300 mb-5 font-medium">AI Automation That Sparks Growth</p>
       <h1 id="hero-headline" class="font-display text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.95] mb-7 tracking-tight">
-        Every missed call<br /><span class="text-gradient">is money on the table.</span>
+        Every missed call<br /><span class="text-gradient">kills a spark.</span>
       </h1>
       <p id="hero-sub" class="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
-        We build the automations that text your customers back before they call your competitor — missed calls, instant lead response, review requests, reactivation. Live in days, not months.
+        We build the automations that reignite it instantly — texting your customers back before they call the next business. Missed calls, instant leads, reviews, reactivation. Live in days, not months.
       </p>
       <div id="hero-cta-group" class="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a href="#calculator" class="inline-flex items-center gap-2 bg-amber-400 hover:bg-amber-300 text-black font-semibold text-base px-7 py-3.5 rounded-full transition-all duration-300 hover:scale-105">
+        <a href="#calculator" class="inline-flex items-center gap-2 bg-yellow-300 hover:bg-yellow-200 text-black font-semibold text-base px-7 py-3.5 rounded-full transition-all duration-300 hover:scale-105">
           See What You're Losing
         </a>
         <a href="#case-study" class="inline-flex items-center gap-2 text-gray-300 hover:text-white font-medium text-base px-7 py-3.5 rounded-full border border-white/15 hover:border-white/30 transition-all duration-300">
@@ -55,26 +68,26 @@
 
   <!-- ░░░ SERVICES ░░░ -->
   <section id="services" class="py-28 px-6 max-w-6xl mx-auto">
-    <p class="text-xs uppercase tracking-[0.2em] text-amber-400 text-center mb-4 font-medium">What We Build</p>
+    <p class="text-xs uppercase tracking-[0.2em] text-yellow-300 text-center mb-4 font-medium">What We Build</p>
     <h2 class="font-display text-4xl md:text-5xl font-bold text-center mb-16 tracking-tight">Four automations, one system</h2>
 
     <div class="grid md:grid-cols-2 gap-6">
-      <div class="service-card bg-white/[0.03] border border-white/10 rounded-2xl p-8 hover:border-amber-400/40 transition-all duration-500">
+      <div class="service-card bg-white/[0.03] border border-white/10 rounded-2xl p-8 hover:border-cyan-400/40 transition-all duration-500">
         <div class="text-3xl mb-5">📞</div>
         <h3 class="font-display text-xl font-bold mb-2.5">Missed Call Text-Back</h3>
         <p class="text-gray-400 leading-relaxed text-[15px]">A call goes unanswered, your customer gets a text within 30 seconds — before they hang up and call the next business on Google.</p>
       </div>
-      <div class="service-card bg-white/[0.03] border border-white/10 rounded-2xl p-8 hover:border-amber-400/40 transition-all duration-500">
+      <div class="service-card bg-white/[0.03] border border-white/10 rounded-2xl p-8 hover:border-cyan-400/40 transition-all duration-500">
         <div class="text-3xl mb-5">⚡</div>
         <h3 class="font-display text-xl font-bold mb-2.5">Instant Lead Response</h3>
         <p class="text-gray-400 leading-relaxed text-[15px]">A form gets submitted on your site, they hear back immediately — not tomorrow morning when the lead's gone cold.</p>
       </div>
-      <div class="service-card bg-white/[0.03] border border-white/10 rounded-2xl p-8 hover:border-amber-400/40 transition-all duration-500">
+      <div class="service-card bg-white/[0.03] border border-white/10 rounded-2xl p-8 hover:border-cyan-400/40 transition-all duration-500">
         <div class="text-3xl mb-5">⭐</div>
         <h3 class="font-display text-xl font-bold mb-2.5">Review Requests</h3>
         <p class="text-gray-400 leading-relaxed text-[15px]">Job's done, a review link goes out on autopilot a week later — building the reputation that gets you the next customer for free.</p>
       </div>
-      <div class="service-card bg-white/[0.03] border border-white/10 rounded-2xl p-8 hover:border-amber-400/40 transition-all duration-500">
+      <div class="service-card bg-white/[0.03] border border-white/10 rounded-2xl p-8 hover:border-cyan-400/40 transition-all duration-500">
         <div class="text-3xl mb-5">🔄</div>
         <h3 class="font-display text-xl font-bold mb-2.5">Reactivation</h3>
         <p class="text-gray-400 leading-relaxed text-[15px]">Past customers gone quiet for 30-60 days get a re-engagement text — turning your old client list into new revenue.</p>
@@ -85,7 +98,7 @@
   <!-- ░░░ ROI CALCULATOR ░░░ -->
   <section id="calculator" class="py-28 px-6 bg-white/[0.02] border-y border-white/5">
     <div class="max-w-4xl mx-auto">
-      <p class="text-xs uppercase tracking-[0.2em] text-amber-400 text-center mb-4 font-medium">The Math</p>
+      <p class="text-xs uppercase tracking-[0.2em] text-yellow-300 text-center mb-4 font-medium">The Math</p>
       <h2 class="font-display text-4xl md:text-5xl font-bold text-center mb-4 tracking-tight">What are missed calls actually costing you?</h2>
       <p class="text-gray-400 text-center mb-16 max-w-xl mx-auto">Three numbers. That's all it takes to see the real dollar amount walking away every month.</p>
 
@@ -95,7 +108,7 @@
           <div>
             <label class="flex items-center justify-between text-sm font-medium text-gray-300 mb-2.5">
               <span>Average Client Value</span>
-              <span id="clientValueDisplay" class="text-amber-400 font-display font-bold">$400</span>
+              <span id="clientValueDisplay" class="text-yellow-300 font-display font-bold">$400</span>
             </label>
             <input type="range" id="clientValue" min="50" max="5000" step="10" value="400" class="calc-slider" />
             <p class="text-xs text-gray-500 mt-1.5">How much revenue does one closed customer bring in?</p>
@@ -104,7 +117,7 @@
           <div>
             <label class="flex items-center justify-between text-sm font-medium text-gray-300 mb-2.5">
               <span>Missed Calls per Week</span>
-              <span id="missedCallsDisplay" class="text-amber-400 font-display font-bold">10</span>
+              <span id="missedCallsDisplay" class="text-yellow-300 font-display font-bold">10</span>
             </label>
             <input type="range" id="missedCalls" min="1" max="100" step="1" value="10" class="calc-slider" />
             <p class="text-xs text-gray-500 mt-1.5">Calls that ring out, go to voicemail, or aren't picked up.</p>
@@ -113,7 +126,7 @@
           <div>
             <label class="flex items-center justify-between text-sm font-medium text-gray-300 mb-2.5">
               <span>Average Close Rate</span>
-              <span id="closeRateDisplay" class="text-amber-400 font-display font-bold">25%</span>
+              <span id="closeRateDisplay" class="text-yellow-300 font-display font-bold">25%</span>
             </label>
             <input type="range" id="closeRate" min="1" max="100" step="1" value="25" class="calc-slider" />
             <p class="text-xs text-gray-500 mt-1.5">Of the people who reach you, what share become paying customers?</p>
@@ -133,10 +146,10 @@
             </div>
             <div>
               <p class="text-xs uppercase tracking-widest text-gray-400 mb-2">Return on Spend</p>
-              <p id="resultROI" class="font-display text-2xl font-bold text-amber-400 tabular-nums">0%</p>
+              <p id="resultROI" class="font-display text-2xl font-bold text-cyan-300 tabular-nums">0%</p>
             </div>
           </div>
-          <a href="#contact" class="mt-8 w-full inline-flex items-center justify-center gap-2 bg-amber-400 hover:bg-amber-300 text-black font-semibold text-sm px-6 py-3.5 rounded-full transition-all duration-300">
+          <a href="#contact" class="mt-8 w-full inline-flex items-center justify-center gap-2 bg-yellow-300 hover:bg-yellow-200 text-black font-semibold text-sm px-6 py-3.5 rounded-full transition-all duration-300">
             Let's Get This Built
           </a>
         </div>
@@ -146,12 +159,12 @@
 
   <!-- ░░░ CASE STUDY ░░░ -->
   <section id="case-study" class="py-28 px-6 max-w-5xl mx-auto">
-    <p class="text-xs uppercase tracking-[0.2em] text-amber-400 text-center mb-4 font-medium">Proof, Not Promises</p>
+    <p class="text-xs uppercase tracking-[0.2em] text-yellow-300 text-center mb-4 font-medium">Proof, Not Promises</p>
     <h2 class="font-display text-4xl md:text-5xl font-bold text-center mb-16 tracking-tight">A real build, not a mockup</h2>
 
     <div class="bg-white/[0.03] border border-white/10 rounded-3xl p-8 md:p-12">
       <div class="flex flex-wrap items-center gap-3 mb-6">
-        <span class="text-xs font-medium bg-amber-400/10 text-amber-400 px-3 py-1.5 rounded-full">Pressure Washing</span>
+        <span class="text-xs font-medium bg-yellow-300/10 text-yellow-300 px-3 py-1.5 rounded-full">Pressure Washing</span>
         <span class="text-xs font-medium bg-white/5 text-gray-400 px-3 py-1.5 rounded-full">Missed Call Text-Back</span>
         <span class="text-xs font-medium bg-white/5 text-gray-400 px-3 py-1.5 rounded-full">Live &amp; Verified</span>
       </div>
@@ -161,15 +174,15 @@
       </p>
       <div class="grid sm:grid-cols-3 gap-6 pt-6 border-t border-white/10">
         <div>
-          <p class="font-display text-3xl font-bold text-amber-400">24</p>
+          <p class="font-display text-3xl font-bold text-yellow-300">24</p>
           <p class="text-xs text-gray-500 mt-1">workflow nodes</p>
         </div>
         <div>
-          <p class="font-display text-3xl font-bold text-amber-400">30s</p>
+          <p class="font-display text-3xl font-bold text-cyan-300">30s</p>
           <p class="text-xs text-gray-500 mt-1">response window</p>
         </div>
         <div>
-          <p class="font-display text-3xl font-bold text-amber-400">100%</p>
+          <p class="font-display text-3xl font-bold text-yellow-300">100%</p>
           <p class="text-xs text-gray-500 mt-1">live-call success rate</p>
         </div>
       </div>
@@ -180,10 +193,15 @@
   <section id="contact" class="py-28 px-6 text-center">
     <div class="max-w-2xl mx-auto">
       <h2 class="font-display text-4xl md:text-5xl font-bold mb-6 tracking-tight">Stop losing customers to voicemail.</h2>
-      <p class="text-gray-400 mb-10 text-lg">Tell us about your business — we'll show you exactly what a system like this looks like for you.</p>
-      <a href="sms:+16506135634" class="inline-flex items-center gap-3 bg-amber-400 hover:bg-amber-300 text-black font-semibold text-lg px-8 py-4 rounded-full transition-all duration-300 hover:scale-105">
-        Text (650) 613-5634
-      </a>
+      <p class="text-gray-400 mb-10 text-lg">Tell us about your business — we'll show you exactly what a system like this looks like for you. No bot on the other end yet, just the founder.</p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="tel:+16508850559" class="inline-flex items-center gap-3 bg-yellow-300 hover:bg-yellow-200 text-black font-semibold text-lg px-8 py-4 rounded-full transition-all duration-300 hover:scale-105">
+          Call (650) 885-0559
+        </a>
+        <a href="mailto:sparsh9g@gmail.com" class="inline-flex items-center gap-3 text-gray-200 hover:text-white font-medium text-lg px-8 py-4 rounded-full border border-white/15 hover:border-white/30 transition-all duration-300">
+          sparsh9g@gmail.com
+        </a>
+      </div>
     </div>
   </section>
 
