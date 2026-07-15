@@ -1,14 +1,30 @@
-// ─── Ignition flash ───
-gsap.timeline()
-  .set('#ignition-flash', { opacity: 0.9 })
-  .to('#ignition-flash', { opacity: 0, duration: 0.5, ease: 'power2.out' }, 0.05);
+// ─── Lightning strike intro — bolt snaps down, flashes, ignites the page ───
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-// ─── Hero entrance — fast and snappy, not a slow fade ───
-gsap.from('#hero-eyebrow', { opacity: 0, y: 10, duration: 0.35, delay: 0.15, ease: 'power4.out' });
-gsap.from('#hero-headline', { opacity: 0, y: 18, scale: 0.97, duration: 0.45, delay: 0.22, ease: 'back.out(1.6)' });
-gsap.from('#hero-sub', { opacity: 0, y: 12, duration: 0.4, delay: 0.4, ease: 'power4.out' });
-gsap.from('#hero-cta-group', { opacity: 0, y: 12, duration: 0.4, delay: 0.5, ease: 'power4.out' });
-gsap.from('#logo-bolt', { rotate: -25, scale: 0.5, opacity: 0, duration: 0.5, delay: 0.1, ease: 'back.out(2.5)' });
+if (reduceMotion) {
+  // Skip the show — just make sure everything is visible immediately.
+  gsap.set(['#strike-bolt'], { opacity: 0 });
+} else {
+  gsap.set('#strike-bolt', { scaleY: 0, transformOrigin: 'top center' });
+
+  const strikeTl = gsap.timeline({ delay: 0.1 });
+
+  strikeTl
+    // the bolt snaps downward, fast and sharp
+    .to('#strike-bolt', { scaleY: 1, duration: 0.16, ease: 'power4.in' })
+    // impact — screen flashes white
+    .to('#ignition-flash', { opacity: 0.95, duration: 0.04 }, '-=0.02')
+    .to('#logo-bolt', { rotate: -25, scale: 0.6, opacity: 0, duration: 0.01 }, '<')
+    // bolt and flash both burn off
+    .to('#strike-bolt', { opacity: 0, duration: 0.3, ease: 'power2.out' }, '+=0.02')
+    .to('#ignition-flash', { opacity: 0, duration: 0.45, ease: 'power2.out' }, '<')
+    // the page ignites — text pops in like it was struck alive
+    .to('#logo-bolt', { rotate: 14, scale: 1, opacity: 1, duration: 0.5, ease: 'back.out(2.5)' }, '-=0.35')
+    .from('#hero-eyebrow', { opacity: 0, y: 10, duration: 0.35, ease: 'power4.out' }, '-=0.3')
+    .from('#hero-headline', { opacity: 0, y: 18, scale: 0.97, duration: 0.45, ease: 'back.out(1.6)' }, '-=0.2')
+    .from('#hero-sub', { opacity: 0, y: 12, duration: 0.4, ease: 'power4.out' }, '-=0.25')
+    .from('#hero-cta-group', { opacity: 0, y: 12, duration: 0.4, ease: 'power4.out' }, '-=0.25');
+}
 
 // ─── Service cards scroll reveal — quick snap-in ───
 gsap.registerPlugin(ScrollTrigger);
