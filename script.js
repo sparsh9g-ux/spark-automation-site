@@ -1,20 +1,15 @@
 // ─── Hero entrance ───
-gsap.timeline({ defaults: { ease: 'power3.out' } })
-  .to('#hero-eyebrow', { opacity: 1, y: 0, duration: 0.6 }, 0.1)
-  .from('#hero-eyebrow', { y: 12 }, 0.1)
-  .to('#hero-headline', { opacity: 1, duration: 0.8 }, 0.25)
-  .from('#hero-headline', { y: 24 }, 0.25)
-  .to('#hero-sub', { opacity: 1, duration: 0.7 }, 0.45)
-  .from('#hero-sub', { y: 16 }, 0.45)
-  .to('#hero-cta-group', { opacity: 1, duration: 0.7 }, 0.6)
-  .from('#hero-cta-group', { y: 16 }, 0.6);
+gsap.from('#hero-eyebrow', { opacity: 0, y: 12, duration: 0.6, delay: 0.1, ease: 'power3.out' });
+gsap.from('#hero-headline', { opacity: 0, y: 24, duration: 0.8, delay: 0.25, ease: 'power3.out' });
+gsap.from('#hero-sub', { opacity: 0, y: 16, duration: 0.7, delay: 0.45, ease: 'power3.out' });
+gsap.from('#hero-cta-group', { opacity: 0, y: 16, duration: 0.7, delay: 0.6, ease: 'power3.out' });
 
 // ─── Service cards scroll reveal ───
 gsap.registerPlugin(ScrollTrigger);
 gsap.utils.toArray('.service-card').forEach((card, i) => {
-  gsap.to(card, {
-    opacity: 1,
-    y: 0,
+  gsap.from(card, {
+    opacity: 0,
+    y: 24,
     duration: 0.7,
     delay: (i % 2) * 0.1,
     ease: 'power2.out',
