@@ -20,8 +20,16 @@
     <div id="logo-lockup" class="flex items-center gap-2">
       <div class="flex items-center font-display font-bold text-xl tracking-tight">
         <span>SPA</span>
-        <svg id="logo-bolt" viewBox="0 0 24 24" class="w-6 h-9 -mx-1 rotate-[14deg]" fill="#fde047">
-          <path d="M13 2 3 14h7l-2 8 10-12h-7l2-8z"/>
+        <svg id="logo-bolt" viewBox="0 0 24 24" class="w-6 h-9 -mx-1 rotate-[14deg]">
+          <defs>
+            <linearGradient id="boltGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#fde047"/>
+              <stop offset="50%" stop-color="#ffffff"/>
+              <stop offset="100%" stop-color="#22d3ee"/>
+            </linearGradient>
+          </defs>
+          <path id="bolt-solid" d="M13 2 3 14h7l-2 8 10-12h-7l2-8z" fill="#fde047"/>
+          <path id="bolt-gradient" d="M13 2 3 14h7l-2 8 10-12h-7l2-8z" fill="url(#boltGradient)" opacity="0"/>
         </svg>
         <span>K</span>
       </div>
@@ -43,7 +51,10 @@
     <div class="relative z-10 max-w-4xl">
       <p id="hero-eyebrow" class="text-xs uppercase tracking-[0.2em] text-yellow-300 mb-5 font-medium">AI Automation That Sparks Growth</p>
       <h1 id="hero-headline" class="font-display text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.95] mb-7 tracking-tight">
-        Every missed call<br /><span id="spark-word" class="text-gradient">kills a spark.</span>
+        Every missed call<br /><span id="spark-word" class="spark-word-grid">
+          <span class="spark-word-layer spark-word-solid">kills a spark.</span>
+          <span class="spark-word-layer spark-word-gradient text-gradient">kills a spark.</span>
+        </span>
       </h1>
       <p id="hero-sub" class="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
         We build the automations that reignite it instantly — texting your customers back before they call the next business. Missed calls, instant leads, reviews, reactivation. Live in days, not months.

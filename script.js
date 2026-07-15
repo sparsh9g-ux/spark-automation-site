@@ -1,15 +1,24 @@
 // ─── Ignition intro — logo bolt flickers, then hero text snaps in ───
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-if (!reduceMotion) {
+if (reduceMotion) {
+  // Skip the animation, but still land on the final "cooled" gradient look.
+  gsap.set('#bolt-solid', { opacity: 0 });
+  gsap.set('#bolt-gradient', { opacity: 1 });
+  gsap.set('.spark-word-solid', { opacity: 0 });
+  gsap.set('.spark-word-gradient', { opacity: 1 });
+} else {
   const igniteTl = gsap.timeline({ delay: 0.15 });
 
   igniteTl
-    // logo bolt flickers like it's catching a spark
+    // logo bolt flickers like it's catching a spark — hot yellow at first
     .to('#logo-bolt', { scale: 1.6, filter: 'brightness(2.5)', duration: 0.12, ease: 'power2.out' })
     .to('#logo-bolt', { scale: 0.85, filter: 'brightness(0.6)', duration: 0.09 })
     .to('#logo-bolt', { scale: 1.3, filter: 'brightness(2)', duration: 0.1 })
     .to('#logo-bolt', { scale: 1, filter: 'brightness(1)', duration: 0.34, ease: 'power2.out' })
+    // ...then cools into the brand gradient as the flicker settles
+    .to('#bolt-solid', { opacity: 0, duration: 0.34, ease: 'power2.out' }, '<')
+    .to('#bolt-gradient', { opacity: 1, duration: 0.34, ease: 'power2.out' }, '<')
     // hero text snaps in right as the flicker settles
     .from('#hero-eyebrow', { opacity: 0, y: 10, duration: 0.35, ease: 'power4.out' }, '-=0.15')
     .from('#hero-headline', { opacity: 0, y: 18, scale: 0.97, duration: 0.45, ease: 'back.out(1.6)' }, '-=0.1')
@@ -18,6 +27,9 @@ if (!reduceMotion) {
     .to('#spark-word', { filter: 'brightness(0.7)', duration: 0.09 })
     .to('#spark-word', { filter: 'brightness(1.8)', duration: 0.1 })
     .to('#spark-word', { filter: 'brightness(1)', duration: 0.34, ease: 'power2.out' })
+    // ...and cools into the same gradient, in sync with the logo bolt
+    .to('.spark-word-solid', { opacity: 0, duration: 0.34, ease: 'power2.out' }, '<')
+    .to('.spark-word-gradient', { opacity: 1, duration: 0.34, ease: 'power2.out' }, '<')
     .from('#hero-sub', { opacity: 0, y: 12, duration: 0.4, ease: 'power4.out' }, '-=0.35')
     .from('#hero-cta-group', { opacity: 0, y: 12, duration: 0.4, ease: 'power4.out' }, '-=0.2');
 }

@@ -13,6 +13,22 @@
   color: transparent;
 }
 
+.spark-word-grid {
+  display: inline-grid;
+}
+
+.spark-word-layer {
+  grid-area: 1 / 1;
+}
+
+.spark-word-solid {
+  color: #fde047;
+}
+
+.spark-word-gradient {
+  opacity: 0;
+}
+
 #hero-glow {
   background:
     radial-gradient(ellipse 55% 45% at 50% 15%, rgba(253, 224, 71, 0.16) 0%, transparent 60%),
