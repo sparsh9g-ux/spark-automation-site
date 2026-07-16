@@ -31,7 +31,10 @@ if (reduceMotion) {
     .to('.spark-word-solid', { opacity: 0, duration: 0.34, ease: 'power2.out' }, '<')
     .to('.spark-word-gradient', { opacity: 1, duration: 0.34, ease: 'power2.out' }, '<')
     .from('#hero-sub', { opacity: 0, y: 12, duration: 0.4, ease: 'power4.out' }, '-=0.35')
-    .from('#hero-cta-group', { opacity: 0, y: 12, duration: 0.4, ease: 'power4.out' }, '-=0.2');
+    // "reignite it instantly" gets one smooth glow pulse once the sentence lands — not a flicker
+    .to('#reignite-word', { filter: 'brightness(1.8)', duration: 0.35, ease: 'power2.out' }, '-=0.1')
+    .to('#reignite-word', { filter: 'brightness(1)', duration: 0.5, ease: 'power2.inOut' })
+    .from('#hero-cta-group', { opacity: 0, y: 12, duration: 0.4, ease: 'power4.out' }, '-=0.6');
 }
 
 // ─── Service cards scroll reveal — quick snap-in ───
