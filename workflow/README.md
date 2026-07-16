@@ -9,3 +9,7 @@ The real automation behind the pressure-washing case study on [spark-automation-
 Account-specific identifiers (GHL location ID, pipeline ID, stage ID, credential reference, and stored phone numbers) have been replaced with placeholders before publishing here. The real workflow runs on a private n8n instance against a live GoHighLevel account — this file is for showing the logic and structure, not for re-importing and running as-is.
 
 To run it for real, you'd need your own GHL account, your own credential set up in n8n, and your own pipeline/stage IDs swapped back in.
+
+## Diligence, not just "it ran"
+
+This workflow went through two real failures before being called done: a wrong field path silently rejected every real call, and later a dead webhook tunnel did the same. Both were only caught by tracing a live phone call through n8n's execution history and GHL's execution logs — not by trusting that "no visible errors" meant it worked.
