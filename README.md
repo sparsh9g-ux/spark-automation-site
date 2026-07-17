@@ -12,12 +12,7 @@ AI-powered missed-call, follow-up, and reactivation systems for local service bu
 
 ## How this was built
 
-This was built in close collaboration with Claude, and the process mapped closely onto Anthropic's own AI Fluency framework:
-
-- **Delegation** — deciding what to hand to Claude (scaffolding the site, building the n8n workflow's 24 nodes, debugging a dead webhook tunnel) versus what needed a human call (brand direction, copy tone, which niches to target, pricing).
-- **Description** — the clearer the ask, the better the output. Vague direction like "make it look good" produced generic results; specific direction ("electric, not warm-glow; snappy `back.out` easing, not slow fades") produced the actual site.
-- **Discernment** — not accepting outputs at face value. A live call test looked like it should have worked and didn't; tracing it through GHL's execution logs surfaced the real bug (a dead webhook tunnel), not the first theory that seemed obvious.
-- **Diligence** — verifying before trusting. Every change here was checked against a real phone call and real execution logs — not just "no errors shown" — before being called done.
+This was built in close collaboration with Claude. Some of it — scaffolding the site, writing the n8n workflow's 24 nodes, tracking down a dead webhook tunnel — was handed off entirely; the brand direction, copy tone, and business calls like pricing and which niches to target stayed human. The clearer the direction, the better what came back — vague asks produced generic results, specific ones didn't. And nothing here was taken at face value: a live call test looked like it should have worked and didn't, and it took tracing it through real execution logs, not just trusting "no errors shown," to actually find the bug. Every change was checked against something real before it was called done.
 
 ## The automation
 
