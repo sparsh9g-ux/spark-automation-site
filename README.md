@@ -8,7 +8,8 @@ AI-powered missed-call, follow-up, and reactivation systems for local service bu
 
 - `index.html`, `style.css`, `script.js` — the marketing site, including a live ROI calculator and an ignition-themed brand animation
 - `contact.html` — dedicated contact page with a working Formspree-backed form
-- `/workflow` — a sanitized export of the real n8n automation behind the case study (see its own README for details)
+
+The n8n automation behind the case study on this site lives in its own repo: [missed-call-automation](https://github.com/sparsh9g-ux/missed-call-automation).
 
 ## How this was built
 
@@ -16,4 +17,4 @@ This was built in close collaboration with Claude. Scaffolding the site and trac
 
 ## The automation
 
-The core automation — missed call → 30-second wait → dedupe → GHL contact/opportunity update → SMS — is documented in [`/workflow`](./workflow).
+The core automation — missed call → 30-second wait → dedupe → GHL contact/opportunity update → SMS — is documented at [missed-call-automation](https://github.com/sparsh9g-ux/missed-call-automation), including a visual diagram of the full workflow.
