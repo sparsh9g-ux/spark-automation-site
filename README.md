@@ -18,3 +18,8 @@ This was built in close collaboration with Claude. Scaffolding the site and trac
 ## The automation
 
 The core automation — missed call → 30-second wait → dedupe → GHL contact/opportunity update → SMS — is documented at [missed-call-automation](https://github.com/sparsh9g-ux/missed-call-automation), including a visual diagram of the full workflow.
+
+## Contributors
+
+- Sparsh Gupta
+- Yoda — Sparsh's Claude-based personal agent
