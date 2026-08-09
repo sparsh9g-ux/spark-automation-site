@@ -14,6 +14,7 @@ contactForm.addEventListener('submit', async (e) => {
       method: 'POST',
       body: new FormData(contactForm),
       headers: { Accept: 'application/json' },
+      signal: AbortSignal.timeout(10000),
     });
 
     if (response.ok) {
@@ -24,8 +25,11 @@ contactForm.addEventListener('submit', async (e) => {
       contactStatus.textContent = 'Something went wrong. Please try again.';
       contactStatus.classList.add('text-red-400');
     }
-  } catch {
-    contactStatus.textContent = 'Something went wrong. Please try again.';
+  } catch (err) {
+    contactStatus.textContent =
+      err.name === 'TimeoutError' || err.name === 'AbortError'
+        ? 'Request timed out. Please try again.'
+        : 'Something went wrong. Please try again.';
     contactStatus.classList.add('text-red-400');
   } finally {
     contactSubmit.disabled = false;
