@@ -39,20 +39,22 @@ if (reduceMotion) {
 
 // ─── Service cards scroll reveal — quick snap-in ───
 gsap.registerPlugin(ScrollTrigger);
-gsap.utils.toArray('.service-card').forEach((card, i) => {
-  gsap.from(card, {
-    opacity: 0,
-    y: 20,
-    duration: 0.45,
-    delay: (i % 2) * 0.08,
-    ease: 'power3.out',
-    scrollTrigger: {
-      trigger: card,
-      start: 'top 88%',
-      toggleActions: 'play none none none',
-    },
+if (!reduceMotion) {
+  gsap.utils.toArray('.service-card').forEach((card, i) => {
+    gsap.from(card, {
+      opacity: 0,
+      y: 20,
+      duration: 0.45,
+      delay: (i % 2) * 0.08,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: card,
+        start: 'top 88%',
+        toggleActions: 'play none none none',
+      },
+    });
   });
-});
+}
 
 // ─── ROI Calculator ───
 const clientValueInput = document.getElementById('clientValue');
