@@ -55,7 +55,7 @@
 
     <div class="bg-white/[0.03] border border-white/10 rounded-3xl p-8 md:p-10">
       <h2 class="font-display text-2xl font-bold mb-6">Or send a message directly</h2>
-      <form action="https://formspree.io/f/xdaqagor" method="POST" class="space-y-5">
+      <form id="contactForm" action="https://formspree.io/f/xdaqagor" method="POST" class="space-y-5">
         <div>
           <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Name</label>
           <input type="text" id="name" name="name" required
@@ -80,10 +80,11 @@
             class="w-full bg-black/30 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-600 focus:outline-none focus:border-yellow-300/50 transition-colors resize-none"
             placeholder="Tell us about your business and what you're losing to missed calls..."></textarea>
         </div>
-        <button type="submit"
-          class="w-full bg-yellow-300 hover:bg-yellow-200 text-black font-semibold text-base px-6 py-3.5 rounded-full transition-all duration-300">
+        <button type="submit" id="contactSubmit"
+          class="w-full bg-yellow-300 hover:bg-yellow-200 text-black font-semibold text-base px-6 py-3.5 rounded-full transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed">
           Send Message
         </button>
+        <p id="contactStatus" role="status" aria-live="polite" class="text-sm text-center min-h-[1.25rem]"></p>
       </form>
     </div>
   </section>
@@ -95,5 +96,6 @@
     </p>
   </footer>
 
+  <script src="contact.js"></script>
 </body>
 </html>
